@@ -10,13 +10,12 @@
       margin:0;
       padding:0;
       box-sizing:border-box;
-      font-family: 'Poppins', 'Segoe UI', sans-serif;
+      font-family:'Segoe UI', sans-serif;
     }
 
     body{
-      background: radial-gradient(circle at top, #0b1220, #050814);
-      color:white;
-      line-height:1.6;
+      background:#f5f7fb;
+      color:#0f172a;
     }
 
     /* NAVBAR */
@@ -24,89 +23,103 @@
       display:flex;
       justify-content:space-between;
       align-items:center;
-      padding:20px 10%;
+      padding:18px 10%;
+      background:#ffffff;
       position:sticky;
       top:0;
-      background:rgba(15, 23, 42, 0.6);
-      backdrop-filter: blur(10px);
-      border-bottom:1px solid rgba(255,255,255,0.05);
+      box-shadow:0 2px 10px rgba(0,0,0,0.05);
+      z-index:10;
     }
 
     nav h2{
-      color:#38bdf8;
+      color:#2563eb;
     }
 
     nav a{
-      color:#cbd5e1;
-      margin-left:20px;
+      margin-left:18px;
       text-decoration:none;
-      transition:0.3s;
+      color:#334155;
+      font-weight:500;
     }
 
     nav a:hover{
-      color:#38bdf8;
+      color:#2563eb;
     }
 
     /* HERO */
     header{
       text-align:center;
-      padding:120px 20px 80px;
-    }
-
-    .badge{
-      display:inline-block;
-      padding:5px 12px;
-      background:#1e293b;
-      border:1px solid rgba(56,189,248,0.3);
-      border-radius:20px;
-      font-size:12px;
-      color:#38bdf8;
-      margin-bottom:15px;
+      padding:100px 20px 60px;
+      background:#ffffff;
     }
 
     header h1{
-      font-size:48px;
+      font-size:44px;
       margin-bottom:10px;
     }
 
     header p{
-      color:#94a3b8;
-      font-size:18px;
+      color:#475569;
     }
 
     .btn{
-      margin-top:25px;
+      margin-top:20px;
       display:inline-block;
-      padding:12px 28px;
-      background:linear-gradient(135deg,#38bdf8,#0ea5e9);
-      color:#000;
-      border-radius:12px;
+      padding:12px 26px;
+      background:#2563eb;
+      color:#fff;
+      border-radius:10px;
       text-decoration:none;
       font-weight:bold;
       transition:0.3s;
     }
 
     .btn:hover{
+      background:#1d4ed8;
       transform:scale(1.05);
     }
 
-    /* SECTION */
     section{
-      padding:80px 10%;
+      padding:70px 10%;
     }
 
     h2{
-      font-size:28px;
+      text-align:center;
       margin-bottom:30px;
-      color:#38bdf8;
+      font-size:28px;
+      color:#0f172a;
     }
 
     /* ABOUT */
     .about{
       text-align:center;
-      color:#cbd5e1;
+      color:#475569;
       max-width:800px;
       margin:auto;
+    }
+
+    /* MENU TAMBAHAN */
+    .menu{
+      display:flex;
+      justify-content:center;
+      flex-wrap:wrap;
+      gap:10px;
+      margin-top:20px;
+    }
+
+    .menu a{
+      padding:8px 14px;
+      border:1px solid #e2e8f0;
+      border-radius:8px;
+      text-decoration:none;
+      color:#334155;
+      font-size:14px;
+      background:#fff;
+    }
+
+    .menu a:hover{
+      background:#2563eb;
+      color:#fff;
     }
 
     /* PROJECT */
@@ -117,17 +130,16 @@
     }
 
     .card{
-      background:rgba(30,41,59,0.6);
-      border:1px solid rgba(255,255,255,0.05);
-      border-radius:16px;
+      background:#fff;
+      border:1px solid #e2e8f0;
+      border-radius:12px;
       overflow:hidden;
       transition:0.3s;
-      backdrop-filter: blur(10px);
     }
 
     .card:hover{
-      transform:translateY(-10px);
-      border-color:#38bdf8;
+      transform:translateY(-6px);
+      box-shadow:0 10px 20px rgba(0,0,0,0.08);
     }
 
     .card img{
@@ -141,27 +153,28 @@
     }
 
     .card h3{
-      color:#38bdf8;
+      color:#2563eb;
       margin-bottom:8px;
     }
 
     .tag{
       font-size:12px;
-      color:#94a3b8;
-      margin-top:10px;
+      color:#64748b;
+      margin-top:8px;
     }
 
     /* CONTACT */
     .contact{
       text-align:center;
-      color:#cbd5e1;
+      color:#475569;
     }
 
     footer{
       text-align:center;
-      padding:30px;
+      padding:25px;
+      background:#ffffff;
+      border-top:1px solid #e2e8f0;
       color:#64748b;
-      border-top:1px solid rgba(255,255,255,0.05);
     }
 
   </style>
@@ -169,30 +182,40 @@
 
 <body>
 
+  <!-- NAVBAR -->
   <nav>
     <h2>Riski.dev</h2>
     <div>
       <a href="#about">About</a>
       <a href="#project">Project</a>
+      <a href="#skills">Skills</a>
       <a href="#contact">Contact</a>
     </div>
   </nav>
 
+  <!-- HERO -->
   <header>
-    <div class="badge">🚀 Web Developer</div>
     <h1>Halo, Saya Riski 👋</h1>
-    <p>Membangun website modern, cepat, dan profesional</p>
+    <p>Web Developer | UI Designer | Freelancer</p>
     <a class="btn" href="#project">Lihat Project</a>
+
+    <div class="menu">
+      <a href="#about">Tentang</a>
+      <a href="#project">Project</a>
+      <a href="#skills">Skill</a>
+      <a href="#contact">Kontak</a>
+    </div>
   </header>
 
+  <!-- ABOUT -->
   <section id="about">
     <h2>About Me</h2>
     <p class="about">
-      Saya seorang developer yang sedang fokus membuat website modern, sistem informasi, dan aplikasi berbasis web.
-      Saya suka desain clean, simple, dan profesional.
+      Saya seorang web developer yang fokus membuat website modern, clean, dan profesional. Saya suka membangun sistem informasi dan UI/UX.
     </p>
   </section>
 
+  <!-- PROJECT -->
   <section id="project">
     <h2>My Projects</h2>
 
@@ -202,7 +225,7 @@
         <img src="https://via.placeholder.com/400x200" />
         <div class="card-content">
           <h3>Inventaris System</h3>
-          <p>Sistem manajemen barang berbasis web.</p>
+          <p>Sistem barang berbasis web.</p>
           <div class="tag">Laravel • MySQL</div>
         </div>
       </div>
@@ -211,7 +234,7 @@
         <img src="https://via.placeholder.com/400x200" />
         <div class="card-content">
           <h3>Login System</h3>
-          <p>Sistem autentikasi user modern.</p>
+          <p>Sistem autentikasi user.</p>
           <div class="tag">PHP • Auth</div>
         </div>
       </div>
@@ -220,7 +243,7 @@
         <img src="https://via.placeholder.com/400x200" />
         <div class="card-content">
           <h3>Admin Dashboard</h3>
-          <p>Dashboard analytics modern.</p>
+          <p>Dashboard monitoring data.</p>
           <div class="tag">React • API</div>
         </div>
       </div>
@@ -228,6 +251,13 @@
     </div>
   </section>
 
+  <!-- SKILLS -->
+  <section id="skills">
+    <h2>Skills</h2>
+    <p class="about">HTML • CSS • JavaScript • PHP • Laravel • MySQL</p>
+  </section>
+
+  <!-- CONTACT -->
   <section id="contact">
     <h2>Contact</h2>
     <p class="contact">
@@ -238,7 +268,7 @@
   </section>
 
   <footer>
-    © 2026 Riski Portfolio. Built with passion.
+    © 2026 Riski Portfolio - Clean & Professional
   </footer>
 
 </body>
