@@ -327,7 +327,450 @@ footer{
 
 </div>
 
-<!-- DETAIL INVENTARIS -->
+<!-- DETAIL INVENTARIS --><!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Riski Portfolio</title>
+
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:'Segoe UI', sans-serif;
+  scroll-behavior:smooth;
+}
+
+body{
+  background:#0f172a;
+  color:#e2e8f0;
+}
+
+/* NAV */
+nav{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:18px 10%;
+  background:rgba(255,255,255,0.05);
+  backdrop-filter:blur(10px);
+  position:sticky;
+  top:0;
+  z-index:10;
+  border-bottom:1px solid rgba(255,255,255,0.1);
+}
+
+nav h2{color:#38bdf8;}
+
+nav a{
+  margin-left:15px;
+  text-decoration:none;
+  color:#cbd5e1;
+}
+nav a:hover{color:#38bdf8;}
+
+/* ===== TAMBAHAN TOGGLE BUTTON ===== */
+.toggle{
+  margin-left:15px;
+  cursor:pointer;
+  padding:6px 10px;
+  background:#38bdf8;
+  border-radius:8px;
+  font-size:14px;
+  color:#000;
+}
+
+/* HERO */
+header{
+  padding:120px 10%;
+  text-align:center;
+  position:relative;
+  overflow:hidden;
+}
+
+header{
+  position:relative;
+  overflow:hidden;
+}
+
+/* GRADIENT */
+header::before{
+  content:"";
+  position:absolute;
+  top:-50%;
+  left:-50%;
+  width:200%;
+  height:200%;
+  background:linear-gradient(
+    45deg,
+    #0f172a,
+    #1e3a8a,
+    #0ea5e9,
+    #22c55e,
+    #0f172a
+  );
+  background-size:400% 400%;
+  animation:gradientMove 10s ease infinite;
+  opacity:0.15;
+  z-index:0;
+}
+
+header::after{
+  content:"";
+  position:absolute;
+  width:400px;
+  height:400px;
+  background:#38bdf8;
+  filter:blur(120px);
+  border-radius:50%;
+  top:20%;
+  left:60%;
+  opacity:0.25;
+  z-index:0;
+}
+
+.hero{
+  position:relative;
+  z-index:2;
+}
+
+@keyframes gradientMove{
+  0%{background-position:0% 50%;}
+  50%{background-position:100% 50%;}
+  100%{background-position:0% 50%;}
+}
+
+/* FOTO */
+.hero img{
+  width:280px;
+  height:280px;
+  object-fit:cover;
+  border-radius:20px;
+  border:3px solid #38bdf8;
+  box-shadow:0 20px 40px rgba(0,0,0,0.5);
+}
+
+.hero-text{
+  max-width:600px;
+  text-align:left;
+}
+
+.hero-text h1{
+  font-size:45px;
+  color:#38bdf8;
+}
+
+.hero-text p{
+  margin-top:10px;
+  color:#cbd5e1;
+  line-height:1.6;
+}
+
+.btn{
+  margin-top:20px;
+  display:inline-block;
+  padding:12px 25px;
+  background:#38bdf8;
+  color:#0f172a;
+  font-weight:bold;
+  border-radius:10px;
+  text-decoration:none;
+}
+
+/* SECTION */
+section{
+  padding:80px 10%;
+}
+
+h2{
+  text-align:center;
+  margin-bottom:40px;
+  color:#38bdf8;
+}
+
+/* GRID */
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+  gap:20px;
+}
+
+/* CARD */
+.card{
+  background:rgba(255,255,255,0.05);
+  border:1px solid rgba(255,255,255,0.1);
+  border-radius:15px;
+  overflow:hidden;
+  cursor:pointer;
+  transition:0.3s;
+}
+
+.card:hover{
+  transform:translateY(-6px);
+  box-shadow:0 10px 30px rgba(56,189,248,0.2);
+}
+
+.card img{
+  width:100%;
+  height:180px;
+  object-fit:cover;
+}
+
+.card-content{
+  padding:15px;
+}
+
+.card h3{color:#38bdf8;}
+.tag{color:#94a3b8;font-size:12px;}
+
+/* DETAIL */
+.detail{
+  display:none;
+  background:rgba(255,255,255,0.05);
+  border:1px solid rgba(255,255,255,0.1);
+  padding:20px;
+  border-radius:15px;
+  margin-top:20px;
+}
+
+.step{
+  margin-bottom:15px;
+  padding:10px;
+  border-left:4px solid #38bdf8;
+  background:rgba(255,255,255,0.03);
+}
+
+.step img{
+  width:100%;
+  border-radius:10px;
+  margin-top:10px;
+  cursor:pointer;
+}
+
+/* CONTACT */
+.contact{
+  text-align:center;
+  color:#94a3b8;
+  line-height:1.8;
+}
+
+/* FOOTER */
+footer{
+  text-align:center;
+  padding:30px;
+  color:#94a3b8;
+  border-top:1px solid rgba(255,255,255,0.1);
+}
+
+/* MODAL */
+.modal{
+  display:none;
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  background:rgba(0,0,0,0.9);
+  justify-content:center;
+  align-items:center;
+  z-index:999;
+}
+
+.modal img{
+  max-width:90%;
+  max-height:90%;
+  border-radius:10px;
+}
+
+/* RESPONSIVE */
+@media(max-width:768px){
+  .hero{
+    flex-direction:column;
+    text-align:center;
+  }
+  .hero-text{
+    text-align:center;
+  }
+}
+
+/* ===== LIGHT MODE TAMBAHAN ===== */
+body.light{
+  background:#f5f7fb !important;
+  color:#0f172a !important;
+}
+
+body.light nav{
+  background:#ffffff !important;
+  border-bottom:1px solid #e2e8f0 !important;
+}
+
+body.light nav a{color:#334155 !important;}
+
+body.light .card,
+body.light .detail{
+  background:#ffffff !important;
+  border:1px solid #e2e8f0 !important;
+}
+
+body.light .step{
+  background:#f1f5f9 !important;
+}
+
+body.light h2,
+body.light .hero-text h1{
+  color:#2563eb !important;
+}
+
+body.light .btn{
+  background:#2563eb !important;
+  color:#fff !important;
+}
+
+body.light .contact,
+body.light footer{
+  color:#64748b !important;
+}
+</style>
+</head>
+
+<body>
+
+<nav>
+  <h2>Riski.dev</h2>
+  <div>
+    <a href="#home">Home</a>
+    <a href="#project">Project</a>
+    <a href="#contact">Contact</a>
+
+    <!-- TOGGLE -->
+    <span class="toggle" onclick="toggleMode()">🌙</span>
+  </div>
+</nav>
+
+<!-- HERO -->
+<header id="home">
+<div class="hero">
+
+<img src="profil1.png" />
+
+<div class="hero-text">
+  <h1>Hi, I'm Riski</h1>
+
+  <p>
+    Web Developer | Backend Engineer | System Builder  
+    Saya membangun sistem seperti Inventaris, Rumah Makan, dan Akademik Sekolah
+    dengan desain modern dan performa tinggi.
+  </p>
+
+  <a class="btn" href="#project">Lihat Project</a>
+</div>
+
+</div>
+</header>
+
+<!-- PROJECT -->
+<section id="project">
+<h2>Project Saya</h2>
+
+<div class="grid">
+
+<div class="card" onclick="showDetail('inventaris')">
+  <img src="123412.png"/>
+  <div class="card-content">
+    <h3>Inventaris</h3>
+    <p class="tag">Dashboard inventaris</p>
+  </div>
+</div>
+
+<div class="card" onclick="showDetail('rumahmakan')">
+  <img src="rm1.png"/>
+  <div class="card-content">
+    <h3>Rumah Makan</h3>
+    <p class="tag">Kasir & transaksi</p>
+  </div>
+</div>
+
+<div class="card" onclick="showDetail('akademik')">
+  <img src="123412.png"/>
+  <div class="card-content">
+    <h3>Akademik</h3>
+    <p class="tag">Sistem sekolah</p>
+  </div>
+</div>
+
+</div>
+
+<!-- DETAIL -->
+div class="detail" id="inventaris">
+<h3>Inventaris</h3>
+<div class="step"><b>Login</b><img src="a.png" onclick="openImg(this.src)"></div>
+<div class="step"><b>Register</b><img src="b.png" onclick="openImg(this.src)"></div>
+<div class="step"><b>Dhasboard</b><img src="123412.png" onclick="openImg(this.src)"></div>
+<div class="step"><b>create Barang</b><img src="d.png" onclick="openImg(this.src)"></div>
+<div class="step"><b>Index Barang</b><img src="c.png" onclick="openImg(this.src)"></div>
+<div class="step"><b>create Peminjaman</b><img src="f.png" onclick="openImg(this.src)"></div>
+<div class="step"><b>Index Peminjaman</b><img src="e.png" onclick="openImg(this.src)"></div>
+<div class="step"><b>Create Karyawan </b><img src="h.png" onclick="openImg(this.src)"></div>
+<div class="step"><b>Index Karyawan</b><img src="g.png" onclick="openImg(this.src)"></div>
+<div class="step"><b>create Booking</b><img src="j.png" onclick="openImg(this.src)"></div>
+<div class="step"><b>Index Booking</b><img src="i.png" onclick="openImg(this.src)"></div>
+<div class="step"><b>Profil Edit</b><img src="k.png" onclick="openImg(this.src)"></div>
+</div>
+
+<div class="detail" id="rumahmakan">
+<h3>Rumah Makan</h3>
+<div class="step"><img src="rm1.png" onclick="openImg(this.src)"></div>
+</div>
+
+<div class="detail" id="akademik">
+<h3>Akademik</h3>
+<div class="step"><img src="123412.png" onclick="openImg(this.src)"></div>
+</div>
+
+</section>
+
+<section id="contact">
+<h2>Contact</h2>
+<div class="contact">
+Email: riskikurni354@gmail.com<br/>
+Instagram: @riski_kurniawan117<br/>
+WhatsApp: 085184135529
+</div>
+</section>
+
+<footer>
+© 2026 Riski.dev - Professional Portfolio
+</footer>
+
+<div class="modal" id="modal" onclick="closeImg()">
+<img id="modalImg">
+</div>
+
+<script>
+function showDetail(id){
+  document.querySelectorAll('.detail').forEach(d=>d.style.display='none');
+  document.getElementById(id).style.display='block';
+}
+
+function openImg(src){
+  modal.style.display="flex";
+  modalImg.src=src;
+}
+
+function closeImg(){
+  modal.style.display="none";
+}
+
+/* TOGGLE MODE */
+function toggleMode(){
+  document.body.classList.toggle("light");
+}
+</script>
+
+</body>
+</html>
 <div class="detail" id="inventaris">
 <h3>Inventaris</h3>
 <div class="step"><b>Login</b><img src="a.png" onclick="openImg(this.src)"></div>
