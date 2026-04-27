@@ -20,17 +20,25 @@
 
     header{
       text-align:center;
-      padding:80px 20px;
+      padding:90px 20px;
+    }
+
+    header img{
+      width:120px;
+      height:120px;
+      border-radius:50%;
+      object-fit:cover;
+      border:3px solid #38bdf8;
+      margin-bottom:15px;
     }
 
     header h1{
-      font-size:42px;
+      font-size:40px;
       margin-bottom:10px;
     }
 
     header p{
       color:#cbd5e1;
-      font-size:18px;
     }
 
     .btn{
@@ -42,39 +50,68 @@
       border-radius:10px;
       text-decoration:none;
       font-weight:bold;
+      transition:0.3s;
+    }
+
+    .btn:hover{
+      transform:scale(1.05);
+      background:#0ea5e9;
     }
 
     section{
-      padding:60px 20px;
-      max-width:1000px;
+      padding:70px 20px;
+      max-width:1100px;
       margin:auto;
     }
 
     h2{
       text-align:center;
       margin-bottom:30px;
+      font-size:28px;
     }
 
     .grid{
       display:grid;
-      grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+      grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
       gap:20px;
     }
 
     .card{
       background:#1e293b;
-      padding:20px;
       border-radius:15px;
+      overflow:hidden;
+      transition:0.3s;
+      box-shadow:0 0 15px rgba(0,0,0,0.3);
+    }
+
+    .card:hover{
+      transform:translateY(-8px);
+    }
+
+    .card img{
+      width:100%;
+      height:160px;
+      object-fit:cover;
+    }
+
+    .card-content{
+      padding:15px;
     }
 
     .card h3{
       color:#38bdf8;
-      margin-bottom:10px;
+      margin-bottom:8px;
+    }
+
+    .tags{
+      margin-top:10px;
+      font-size:12px;
+      color:#94a3b8;
     }
 
     footer{
       text-align:center;
-      padding:20px;
+      padding:25px;
       color:#94a3b8;
     }
   </style>
@@ -83,15 +120,16 @@
 <body>
 
   <header>
+    <img src="https://via.placeholder.com/150" alt="Foto Profil">
     <h1>Halo, Saya Riski 👋</h1>
     <p>Web Developer | Designer | Freelancer</p>
     <a class="btn" href="#project">Lihat Project Saya</a>
   </header>
 
-  <section id="about">
+  <section>
     <h2>👨‍💻 Tentang Saya</h2>
-    <p style="text-align:center;color:#cbd5e1;">
-      Saya seorang pengembang web yang sedang belajar membuat website modern.
+    <p style="text-align:center;color:#cbd5e1;max-width:750px;margin:auto;">
+      Saya seorang pengembang web yang suka membuat website modern, aplikasi sistem informasi, dan UI yang menarik. Saya sedang mengembangkan kemampuan di bidang frontend dan backend.
     </p>
   </section>
 
@@ -101,18 +139,30 @@
     <div class="grid">
 
       <div class="card">
-        <h3>Inventaris Kominfo</h3>
-        <p>Sistem manajemen barang berbasis web.</p>
+        <img src="https://via.placeholder.com/400x200" alt="Project 1">
+        <div class="card-content">
+          <h3>Inventaris Kominfo</h3>
+          <p>Sistem manajemen barang dan inventaris berbasis web.</p>
+          <div class="tags">Laravel • MySQL • Bootstrap</div>
+        </div>
       </div>
 
       <div class="card">
-        <h3>Login System</h3>
-        <p>Sistem login & register user.</p>
+        <img src="https://via.placeholder.com/400x200" alt="Project 2">
+        <div class="card-content">
+          <h3>Login System</h3>
+          <p>Sistem login & register dengan autentikasi user.</p>
+          <div class="tags">PHP • Auth • UI Design</div>
+        </div>
       </div>
 
       <div class="card">
-        <h3>Dashboard Admin</h3>
-        <p>Dashboard monitoring data aplikasi.</p>
+        <img src="https://via.placeholder.com/400x200" alt="Project 3">
+        <div class="card-content">
+          <h3>Dashboard Admin</h3>
+          <p>Dashboard modern untuk monitoring data aplikasi.</p>
+          <div class="tags">React • API • Dashboard</div>
+        </div>
       </div>
 
     </div>
@@ -120,14 +170,15 @@
 
   <section id="contact">
     <h2>📞 Kontak</h2>
-    <p style="text-align:center;">
+    <p style="text-align:center;color:#cbd5e1;">
       Email: kamu@email.com <br>
-      Instagram: @username
+      Instagram: @username <br>
+      WhatsApp: 08xxxxxxxxxx
     </p>
   </section>
 
   <footer>
-    © 2026 Portfolio Riski
+    © 2026 Portfolio Riski - All Rights Reserved
   </footer>
 
 </body>
