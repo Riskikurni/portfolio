@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Portfolio Riski</title>
+  <title>Riski Portfolio - Landing Page</title>
 
   <style>
     *{
@@ -11,6 +11,7 @@
       padding:0;
       box-sizing:border-box;
       font-family:'Segoe UI', sans-serif;
+      scroll-behavior:smooth;
     }
 
     body{
@@ -18,13 +19,13 @@
       color:#0f172a;
     }
 
-    /* NAVBAR */
+    /* NAV */
     nav{
       display:flex;
       justify-content:space-between;
       align-items:center;
       padding:18px 10%;
-      background:#ffffff;
+      background:#fff;
       position:sticky;
       top:0;
       box-shadow:0 2px 10px rgba(0,0,0,0.05);
@@ -36,7 +37,7 @@
     }
 
     nav a{
-      margin-left:18px;
+      margin-left:15px;
       text-decoration:none;
       color:#334155;
       font-weight:500;
@@ -49,7 +50,7 @@
     /* HERO */
     header{
       text-align:center;
-      padding:100px 20px 60px;
+      padding:110px 20px 70px;
       background:#ffffff;
     }
 
@@ -59,73 +60,35 @@
     }
 
     header p{
-      color:#475569;
+      color:#64748b;
     }
 
     .btn{
       margin-top:20px;
       display:inline-block;
-      padding:12px 26px;
+      padding:12px 25px;
       background:#2563eb;
       color:#fff;
       border-radius:10px;
       text-decoration:none;
       font-weight:bold;
-      transition:0.3s;
     }
 
-    .btn:hover{
-      background:#1d4ed8;
-      transform:scale(1.05);
-    }
-
+    /* SECTION */
     section{
-      padding:70px 10%;
+      padding:80px 10%;
     }
 
     h2{
       text-align:center;
-      margin-bottom:30px;
+      margin-bottom:40px;
       font-size:28px;
-      color:#0f172a;
     }
 
-    /* ABOUT */
-    .about{
-      text-align:center;
-      color:#475569;
-      max-width:800px;
-      margin:auto;
-    }
-
-    /* MENU TAMBAHAN */
-    .menu{
-      display:flex;
-      justify-content:center;
-      flex-wrap:wrap;
-      gap:10px;
-      margin-top:20px;
-    }
-
-    .menu a{
-      padding:8px 14px;
-      border:1px solid #e2e8f0;
-      border-radius:8px;
-      text-decoration:none;
-      color:#334155;
-      font-size:14px;
-      background:#fff;
-    }
-
-    .menu a:hover{
-      background:#2563eb;
-      color:#fff;
-    }
-
-    /* PROJECT */
+    /* PROJECT GRID */
     .grid{
       display:grid;
-      grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+      grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
       gap:20px;
     }
 
@@ -134,6 +97,7 @@
       border:1px solid #e2e8f0;
       border-radius:12px;
       overflow:hidden;
+      cursor:pointer;
       transition:0.3s;
     }
 
@@ -144,7 +108,7 @@
 
     .card img{
       width:100%;
-      height:160px;
+      height:180px;
       object-fit:cover;
     }
 
@@ -154,122 +118,155 @@
 
     .card h3{
       color:#2563eb;
-      margin-bottom:8px;
+      margin-bottom:6px;
     }
 
     .tag{
       font-size:12px;
       color:#64748b;
-      margin-top:8px;
+    }
+
+    /* DETAIL SECTION */
+    .detail{
+      display:none;
+      background:#fff;
+      border:1px solid #e2e8f0;
+      padding:20px;
+      border-radius:12px;
+      margin-top:20px;
+    }
+
+    .step{
+      margin-bottom:15px;
+      padding:10px;
+      border-left:4px solid #2563eb;
+      background:#f8fafc;
+    }
+
+    .step img{
+      width:100%;
+      border-radius:8px;
+      margin-top:10px;
     }
 
     /* CONTACT */
-    .contact{
-      text-align:center;
-      color:#475569;
-    }
-
     footer{
       text-align:center;
-      padding:25px;
-      background:#ffffff;
-      border-top:1px solid #e2e8f0;
+      padding:30px;
       color:#64748b;
+      background:#fff;
+      border-top:1px solid #e2e8f0;
     }
-
   </style>
 </head>
 
 <body>
 
-  <!-- NAVBAR -->
-  <nav>
-    <h2>Riski.dev</h2>
-    <div>
-      <a href="#about">About</a>
-      <a href="#project">Project</a>
-      <a href="#skills">Skills</a>
-      <a href="#contact">Contact</a>
-    </div>
-  </nav>
+<nav>
+  <h2>Riski.dev</h2>
+  <div>
+    <a href="#home">Home</a>
+    <a href="#project">Project</a>
+    <a href="#contact">Contact</a>
+  </div>
+</nav>
 
-  <!-- HERO -->
-  <header>
-    <h1>Halo, Saya Riski 👋</h1>
-    <p>Web Developer | UI Designer | Freelancer</p>
-    <a class="btn" href="#project">Lihat Project</a>
+<header id="home">
+  <h1>Halo, Saya Riski 👋</h1>
+  <p>Portfolio Landing Page Interaktif</p>
+  <a class="btn" href="#project">Lihat Project</a>
+</header>
 
-    <div class="menu">
-      <a href="#about">Tentang</a>
-      <a href="#project">Project</a>
-      <a href="#skills">Skill</a>
-      <a href="#contact">Kontak</a>
-    </div>
-  </header>
+<section id="project">
+  <h2>Project Saya (Klik untuk lihat proses)</h2>
 
-  <!-- ABOUT -->
-  <section id="about">
-    <h2>About Me</h2>
-    <p class="about">
-      Saya seorang web developer yang fokus membuat website modern, clean, dan profesional. Saya suka membangun sistem informasi dan UI/UX.
-    </p>
-  </section>
+  <div class="grid">
 
-  <!-- PROJECT -->
-  <section id="project">
-    <h2>My Projects</h2>
-
-    <div class="grid">
-
-      <div class="card">
-        <img src="https://via.placeholder.com/400x200" />
-        <div class="card-content">
-          <h3>Inventaris System</h3>
-          <p>Sistem barang berbasis web.</p>
-          <div class="tag">Laravel • MySQL</div>
-        </div>
+    <div class="card" onclick="showDetail('inventaris')">
+      <img src="https://via.placeholder.com/400x200" />
+      <div class="card-content">
+        <h3>Aplikasi Inventaris</h3>
+        <p class="tag">Klik untuk lihat tahap pembuatan</p>
       </div>
-
-      <div class="card">
-        <img src="https://via.placeholder.com/400x200" />
-        <div class="card-content">
-          <h3>Login System</h3>
-          <p>Sistem autentikasi user.</p>
-          <div class="tag">PHP • Auth</div>
-        </div>
-      </div>
-
-      <div class="card">
-        <img src="https://via.placeholder.com/400x200" />
-        <div class="card-content">
-          <h3>Admin Dashboard</h3>
-          <p>Dashboard monitoring data.</p>
-          <div class="tag">React • API</div>
-        </div>
-      </div>
-
     </div>
-  </section>
 
-  <!-- SKILLS -->
-  <section id="skills">
-    <h2>Skills</h2>
-    <p class="about">HTML • CSS • JavaScript • PHP • Laravel • MySQL</p>
-  </section>
+    <div class="card" onclick="showDetail('login')">
+      <img src="https://via.placeholder.com/400x200" />
+      <div class="card-content">
+        <h3>Login System</h3>
+        <p class="tag">Klik untuk lihat tahap pembuatan</p>
+      </div>
+    </div>
 
-  <!-- CONTACT -->
-  <section id="contact">
-    <h2>Contact</h2>
-    <p class="contact">
-      Email: kamu@email.com <br/>
-      Instagram: @username <br/>
-      WhatsApp: 08xxxxxxxxxx
-    </p>
-  </section>
+  </div>
 
-  <footer>
-    © 2026 Riski Portfolio - Clean & Professional
-  </footer>
+  <!-- DETAIL INVENTARIS -->
+  <div class="detail" id="inventaris">
+    <h3>Proses Pembuatan Inventaris</h3>
+
+    <div class="step">
+      <b>1. Analisis Sistem</b>
+      <p>Menentukan kebutuhan aplikasi inventaris</p>
+      <img src="https://via.placeholder.com/600x300" />
+    </div>
+
+    <div class="step">
+      <b>2. Desain UI</b>
+      <p>Membuat tampilan dengan Figma</p>
+      <img src="https://via.placeholder.com/600x300" />
+    </div>
+
+    <div class="step">
+      <b>3. Coding</b>
+      <p>Membangun dengan Laravel & MySQL</p>
+      <img src="https://via.placeholder.com/600x300" />
+    </div>
+  </div>
+
+  <!-- DETAIL LOGIN -->
+  <div class="detail" id="login">
+    <h3>Proses Login System</h3>
+
+    <div class="step">
+      <b>1. Struktur Database</b>
+      <p>Membuat tabel user</p>
+      <img src="https://via.placeholder.com/600x300" />
+    </div>
+
+    <div class="step">
+      <b>2. Backend Login</b>
+      <p>Validasi username & password</p>
+      <img src="https://via.placeholder.com/600x300" />
+    </div>
+
+    <div class="step">
+      <b>3. UI Login</b>
+      <p>Tampilan form login modern</p>
+      <img src="https://via.placeholder.com/600x300" />
+    </div>
+  </div>
+
+</section>
+
+<section id="contact">
+  <h2>Contact</h2>
+  <p style="text-align:center;color:#64748b">
+    Email: kamu@email.com<br/>
+    Instagram: @username
+  </p>
+</section>
+
+<footer>
+  © 2026 Riski Portfolio - Interactive Landing Page
+</footer>
+
+<script>
+function showDetail(id){
+  document.querySelectorAll('.detail').forEach(d => d.style.display='none');
+  document.getElementById(id).style.display='block';
+  document.getElementById(id).scrollIntoView({behavior:'smooth'});
+}
+</script>
 
 </body>
 </html>
