@@ -10,44 +10,77 @@
       margin:0;
       padding:0;
       box-sizing:border-box;
-      font-family:'Segoe UI', sans-serif;
+      font-family: 'Poppins', 'Segoe UI', sans-serif;
     }
 
     body{
-      background: linear-gradient(135deg, #0f172a, #1e293b);
+      background: radial-gradient(circle at top, #0b1220, #050814);
       color:white;
+      line-height:1.6;
     }
 
+    /* NAVBAR */
+    nav{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      padding:20px 10%;
+      position:sticky;
+      top:0;
+      background:rgba(15, 23, 42, 0.6);
+      backdrop-filter: blur(10px);
+      border-bottom:1px solid rgba(255,255,255,0.05);
+    }
+
+    nav h2{
+      color:#38bdf8;
+    }
+
+    nav a{
+      color:#cbd5e1;
+      margin-left:20px;
+      text-decoration:none;
+      transition:0.3s;
+    }
+
+    nav a:hover{
+      color:#38bdf8;
+    }
+
+    /* HERO */
     header{
       text-align:center;
-      padding:90px 20px;
+      padding:120px 20px 80px;
     }
 
-    header img{
-      width:120px;
-      height:120px;
-      border-radius:50%;
-      object-fit:cover;
-      border:3px solid #38bdf8;
+    .badge{
+      display:inline-block;
+      padding:5px 12px;
+      background:#1e293b;
+      border:1px solid rgba(56,189,248,0.3);
+      border-radius:20px;
+      font-size:12px;
+      color:#38bdf8;
       margin-bottom:15px;
     }
 
     header h1{
-      font-size:40px;
+      font-size:48px;
       margin-bottom:10px;
     }
 
     header p{
-      color:#cbd5e1;
+      color:#94a3b8;
+      font-size:18px;
     }
 
     .btn{
-      margin-top:20px;
+      margin-top:25px;
       display:inline-block;
-      padding:12px 25px;
-      background:#38bdf8;
+      padding:12px 28px;
+      background:linear-gradient(135deg,#38bdf8,#0ea5e9);
       color:#000;
-      border-radius:10px;
+      border-radius:12px;
       text-decoration:none;
       font-weight:bold;
       transition:0.3s;
@@ -55,37 +88,46 @@
 
     .btn:hover{
       transform:scale(1.05);
-      background:#0ea5e9;
     }
 
+    /* SECTION */
     section{
-      padding:70px 20px;
-      max-width:1100px;
-      margin:auto;
+      padding:80px 10%;
     }
 
     h2{
-      text-align:center;
-      margin-bottom:30px;
       font-size:28px;
+      margin-bottom:30px;
+      color:#38bdf8;
     }
 
+    /* ABOUT */
+    .about{
+      text-align:center;
+      color:#cbd5e1;
+      max-width:800px;
+      margin:auto;
+    }
+
+    /* PROJECT */
     .grid{
       display:grid;
-      grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+      grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
       gap:20px;
     }
 
     .card{
-      background:#1e293b;
-      border-radius:15px;
+      background:rgba(30,41,59,0.6);
+      border:1px solid rgba(255,255,255,0.05);
+      border-radius:16px;
       overflow:hidden;
       transition:0.3s;
-      box-shadow:0 0 15px rgba(0,0,0,0.3);
+      backdrop-filter: blur(10px);
     }
 
     .card:hover{
-      transform:translateY(-8px);
+      transform:translateY(-10px);
+      border-color:#38bdf8;
     }
 
     .card img{
@@ -103,65 +145,83 @@
       margin-bottom:8px;
     }
 
-    .tags{
-      margin-top:10px;
+    .tag{
       font-size:12px;
       color:#94a3b8;
+      margin-top:10px;
+    }
+
+    /* CONTACT */
+    .contact{
+      text-align:center;
+      color:#cbd5e1;
     }
 
     footer{
       text-align:center;
-      padding:25px;
-      color:#94a3b8;
+      padding:30px;
+      color:#64748b;
+      border-top:1px solid rgba(255,255,255,0.05);
     }
+
   </style>
 </head>
 
 <body>
 
+  <nav>
+    <h2>Riski.dev</h2>
+    <div>
+      <a href="#about">About</a>
+      <a href="#project">Project</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </nav>
+
   <header>
-    <img src="https://via.placeholder.com/150" alt="Foto Profil">
+    <div class="badge">🚀 Web Developer</div>
     <h1>Halo, Saya Riski 👋</h1>
-    <p>Web Developer | Designer | Freelancer</p>
-    <a class="btn" href="#project">Lihat Project Saya</a>
+    <p>Membangun website modern, cepat, dan profesional</p>
+    <a class="btn" href="#project">Lihat Project</a>
   </header>
 
-  <section>
-    <h2>👨‍💻 Tentang Saya</h2>
-    <p style="text-align:center;color:#cbd5e1;max-width:750px;margin:auto;">
-      Saya seorang pengembang web yang suka membuat website modern, aplikasi sistem informasi, dan UI yang menarik. Saya sedang mengembangkan kemampuan di bidang frontend dan backend.
+  <section id="about">
+    <h2>About Me</h2>
+    <p class="about">
+      Saya seorang developer yang sedang fokus membuat website modern, sistem informasi, dan aplikasi berbasis web.
+      Saya suka desain clean, simple, dan profesional.
     </p>
   </section>
 
   <section id="project">
-    <h2>🔥 Project Saya</h2>
+    <h2>My Projects</h2>
 
     <div class="grid">
 
       <div class="card">
-        <img src="https://via.placeholder.com/400x200" alt="Project 1">
+        <img src="https://via.placeholder.com/400x200" />
         <div class="card-content">
-          <h3>Inventaris Kominfo</h3>
-          <p>Sistem manajemen barang dan inventaris berbasis web.</p>
-          <div class="tags">Laravel • MySQL • Bootstrap</div>
+          <h3>Inventaris System</h3>
+          <p>Sistem manajemen barang berbasis web.</p>
+          <div class="tag">Laravel • MySQL</div>
         </div>
       </div>
 
       <div class="card">
-        <img src="https://via.placeholder.com/400x200" alt="Project 2">
+        <img src="https://via.placeholder.com/400x200" />
         <div class="card-content">
           <h3>Login System</h3>
-          <p>Sistem login & register dengan autentikasi user.</p>
-          <div class="tags">PHP • Auth • UI Design</div>
+          <p>Sistem autentikasi user modern.</p>
+          <div class="tag">PHP • Auth</div>
         </div>
       </div>
 
       <div class="card">
-        <img src="https://via.placeholder.com/400x200" alt="Project 3">
+        <img src="https://via.placeholder.com/400x200" />
         <div class="card-content">
-          <h3>Dashboard Admin</h3>
-          <p>Dashboard modern untuk monitoring data aplikasi.</p>
-          <div class="tags">React • API • Dashboard</div>
+          <h3>Admin Dashboard</h3>
+          <p>Dashboard analytics modern.</p>
+          <div class="tag">React • API</div>
         </div>
       </div>
 
@@ -169,16 +229,16 @@
   </section>
 
   <section id="contact">
-    <h2>📞 Kontak</h2>
-    <p style="text-align:center;color:#cbd5e1;">
-      Email: kamu@email.com <br>
-      Instagram: @username <br>
+    <h2>Contact</h2>
+    <p class="contact">
+      Email: kamu@email.com <br/>
+      Instagram: @username <br/>
       WhatsApp: 08xxxxxxxxxx
     </p>
   </section>
 
   <footer>
-    © 2026 Portfolio Riski - All Rights Reserved
+    © 2026 Riski Portfolio. Built with passion.
   </footer>
 
 </body>
